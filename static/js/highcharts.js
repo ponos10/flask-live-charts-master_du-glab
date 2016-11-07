@@ -21,7 +21,7 @@ function requestData() {
         cache: false
     });
 }
-
+/*
 $(document).ready(function() {
     chart = new Highcharts.Chart({
         chart: {
@@ -50,6 +50,37 @@ $(document).ready(function() {
         series: [{
             name: 'Random data',
             data: []
+        }]
+    });
+});*/
+
+$(document).ready (function() {
+    chart = new Highcharts.Chart({
+        chart: {
+            type: 'line',
+            renderTo: 'data-container',
+            events: {
+             load: requestData
+            }
+        },
+        title: {
+            text: 'grafik'
+        },
+        yAxis: {
+            title: {
+                text: 'zatizeni'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            name: 'cpu',
         }]
     });
 });
