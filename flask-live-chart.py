@@ -12,8 +12,9 @@ def hello_world():
 
 @app.route('/live-data')
 def live_data():
-    # Create a PHP array and echo it as JSON
-    data = [time() * 1000, random() * 100]
+    import psutil
+    procesor=psutil.pid().___len___()
+    data = [time() * 1000, procesor]
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response
